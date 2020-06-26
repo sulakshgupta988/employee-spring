@@ -1,4 +1,4 @@
-package com.increff.empoyee.dao;
+package com.increff.employee.dao;
 
 import java.util.ArrayList;
 import java.util.HashMap;

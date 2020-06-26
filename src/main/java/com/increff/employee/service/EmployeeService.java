@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.increff.employee.dao.EmployeeDao;
 import com.increff.employee.pojo.EmployeePojo;
-import com.increff.empoyee.dao.EmployeeDao;
 
 @Service
 public class EmployeeService {
