@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head th:replace="fragments.html :: name_head"></head>
+
+<body>
+<nav th:replace="fragments.html :: name_navbar"></nav>
+<div class="container">
+	<h1></h1>
+	<div class="row">
+		<div class="col-12">
+			<h2>Add Employee</h2>
+
+			<form class= "form-inline" id="employee-form">
+			  <div class="form-group">
+			    <label for="inputId" class="col-sm-2 col-form-label">Id</label>
+			    <div class="col-sm-10">
+			      <input type="text" name="id" class="form-control" id="inputId" placeholder="Enter Id">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+			    <div class="col-sm-10">
+			      <input type="text" name="name" class="form-control" id="inputName" placeholder ="Enter Name">
+			    </div>
+			  </div>
+			   <div class="form-group">
+			    <label for ="inputAge" class="col-sm-2 col-form-label">Age</label>
+			    <div class="col-sm-10">
+			      <input type="text" name="age" class="form-control" id="inputAge" placeholder="Enter Age">
+			    </div>
+			  </div>
+			  <button type="button" id="add-employee"class="btn btn-primary mb-2">Add</button>
+			  
+			  <button type="button" id="refresh-data"class="btn btn-primary mb-2">Refresh</button>
+			</form>
+		</div>
+	</div>
+	<br><br>
+	
+	<br><br>
+	<div class="row">
+		<div class="col-12">
+		<table class="table table-striped" id="employee-table">
+		  <thead>
+		    <tr>
+		      <th scope="col">Id</th>
+		      <th scope="col">Name</th>
+		      <th scope="col">Age</th>
+		      <th scope="col">Actions</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <td>1</td>
+		      <td>Otto</td>
+		      <td>23</td>
+		      <td>Edit | Delete</td>
+		    </tr>
+		    <tr>
+		      <td>2</td>
+		      <td>Thornton</td>
+		      <td>34</td>
+		      <td>Edit | Delete</td>
+		    </tr>
+		    <tr>
+		      <td>3</td>
+		      <td>The Bird</td>
+		      <td>23</td>
+		      <td>Edit | Delete</td>
+		    </tr>
+		  </tbody>
+		</table>
+	</div>
+	</div>
+	
+</div>
+
+	<div th:replace="fragments.html :: name_footer"></div>
+	</body>
+	</html>
