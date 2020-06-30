@@ -1,17 +1,14 @@
-
-function init(){
-	$('#add-employee').click(addEmployee);
-	$('#refresh-data').click(getEmployeeList);
-}
-
 function addEmployee(){
 	var $form = $('#employee-form');
 	var json = toJson($form);
 	
 	$.ajax({
-		url: './api',
+		url: '/employee/api/employee',
 		type: 'POST',
 		data: json,
+		headers: {
+		'Content-Type': 'application/json'
+		},
 		success: function(response){
 			alert("Employee Created");
 			getEmployeeList();
@@ -27,7 +24,7 @@ function addEmployee(){
 
 function getEmployeeList(){
 	$.ajax({
-		url: './api',
+		url: '/employee/api/employee',
 		type: 'GET',
 		success: function(response){
 			console.log("Employee Data Fetched");
@@ -35,7 +32,7 @@ function getEmployeeList(){
 			displayEmployeeList(response);
 		},
 		error: function(res){
-			console.log("An error occurred.");
+			alert("An error occurredd");
 		}
 
 	});
@@ -43,7 +40,7 @@ function getEmployeeList(){
 
 function deleteEmployee(id){
 	$.ajax({
-		url: './api?id='+id,
+		url: '/employee/api/employee' + '/' +id,
 		type: 'DELETE',
 		success: function(response){
 			console.log("Employee Deleted");
@@ -84,4 +81,12 @@ function toJson($form){
 	return json;
 }
 
+
+function init(){
+	$('#add-employee').click(addEmployee);
+	$('#update-employee').click(updateEmployee);
+	$('#refresh-data').click(getEmployeeList);
+}
+
 $(document).ready(init);
+$(document).ready(getEmployeeList);
