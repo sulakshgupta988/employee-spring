@@ -57,7 +57,7 @@ public class EmployeeService {
 
 	}
 
-	private static void normalize(EmployeePojo p) {
+	protected static void normalize(EmployeePojo p) {
 		p.setName(p.getName().toLowerCase().trim());
 
 	}
